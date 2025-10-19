@@ -1,0 +1,36 @@
+# CMake
+CMakeFiles/
+cmake_install.cmake
+Makefile
+CMakeCache.txt
+*.cmake
+
+# Build outputs
+build/
+bin/
+lib/
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Protobuf generated files
+*.pb.cc
+*.pb.h
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Logs
+*.log
