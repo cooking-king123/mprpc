@@ -1,9 +1,9 @@
-syntax="proto3";
-
+syntax = "proto3";
 package fixbug;
 
-option cc_generic_services=true;
-message ResulrCode
+// 在protobuf 3中，cc_generic_services已弃用但仍可使用
+option cc_generic_services = true;
+message ResultCode
 {
     int32 errcode=1;
     bytes errmsg=2;
@@ -14,14 +14,29 @@ message LoginRequest
     bytes name=1;
     bytes pwd=2;
 }
+
 message LoginResponse
 {
-    ResulrCode result=1;
+    ResultCode result=1;
+    bool sucess=2;
+}
+
+message RegisterRequest
+{
+    uint32 id=1;
+    bytes name=2;
+    bytes pwd=3;
+}
+
+
+message RegisterResponse
+{
+    ResultCode result=1;
     bool sucess=2;
 }
 
 service UserServiceRpc
 {
     rpc Login(LoginRequest) returns(LoginResponse);
-
+    rpc Register(RegisterRequest) returns(RegisterResponse);
 }
